@@ -1,21 +1,23 @@
 <?php
 
 use App\Http\Controllers\Admin\{
+  DetalhePlanoController,
   PlanoController,
   UsuarioController
 };
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('admin')->group(function () {
+Route::middleware('auth')->prefix('admin')->group(function () {
 
-  #Detalhe Planos
-  #Route::get('detalhe/excluir/{id}', [DetalhePlanoController::class, 'excluir'])->middleware(['auth'])->name('detalhe.excluir');
-  #Route::resource('planos/{id}/detalhe', DetalhePlanoController::class)->middleware(['auth']);
+  #Detalhes Plano
+  Route::get('detalhes/excluir/{id}', [DetalhePlanoController::class, 'excluir'])->name('detalhes.excluir');
+  Route::resource('planos/{id}/detalhes', DetalhePlanoController::class);
+  #Detalhes Plano
 
   #Planos
-  Route::get('plano/excluir/{id}', [PlanoController::class, 'excluir'])->middleware(['auth'])->name('plano.excluir');
-  Route::resource('plano', PlanoController::class)->middleware(['auth']);
+  Route::get('plano/excluir/{id}', [PlanoController::class, 'excluir'])->name('plano.excluir');
+  Route::resource('plano', PlanoController::class);
   #planos
 
   #Usuários

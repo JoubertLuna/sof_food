@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'SOFCLA ERP')
+@section('title', 'SOF FOOD')
 
 @section('content_header')
-    <a href="{{ route('detalhe.create', $plano->id) }}" class="btn btn-danger"><i class="fas fa-plus-circle"></i> Novo Detalhe</a>
+    <a href="{{ route('detalhes.create', $plano->id) }}" class="btn btn-danger"><i class="fas fa-plus-circle"></i> Novo Detalhe</a>
 @stop
 
 @section('content')

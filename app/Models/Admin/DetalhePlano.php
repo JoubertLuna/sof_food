@@ -5,15 +5,17 @@ namespace App\Models\Admin;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Plano extends Model
+class DetalhePlano extends Model
 {
   use HasFactory;
 
-  protected $fillable = ['nome', 'url', 'preco', 'descricao'];
+  protected $table = 'detalhes_plano';
+
+  protected $fillable = ['nome'];
 
   #Relecionamentos
-  public function detalhes()
+  public function plano()
   {
-    return $this->hasMany(DetalhePlano::class);
+    return $this->belongsTo(Plano::class);
   }
 }

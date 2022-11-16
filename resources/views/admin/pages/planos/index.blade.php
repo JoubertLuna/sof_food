@@ -29,7 +29,7 @@
                             <td>{{ $plano->descricao }}</td>
 
                             <td>
-                                {{-- <a href="{{ route('detalhe.index', $plano->id) }}" title="Detalhes do Plano"><i class="fas fa-check text-dark"></i></a> --}}
+                                <a href="{{ route('detalhes.index', $plano->id) }}" title="Detalhes do Plano"><i class="fas fa-check text-dark"></i></a>
 
                                 <a href="{{ route('plano.show', $plano->id) }}" title="Ver Plano"><i
                                         class="fas fa-list text-warning"></i></a>

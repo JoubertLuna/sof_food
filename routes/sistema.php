@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\{
   DetalhePlanoController,
+  PerfilController,
   PlanoController,
   UsuarioController
 };
@@ -9,6 +10,11 @@ use App\Http\Controllers\Admin\{
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->prefix('admin')->group(function () {
+
+  #Route para Perfil
+  Route::get('perfis/excluir/{id}', [PerfilController::class, 'excluir'])->name('perfis.excluir');
+  Route::resource('perfis', PerfilController::class);
+  #Route para Perfil
 
   #Detalhes Plano
   Route::get('detalhes/excluir/{id}', [DetalhePlanoController::class, 'excluir'])->name('detalhes.excluir');

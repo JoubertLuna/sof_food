@@ -305,6 +305,11 @@ return [
           'route'  => 'plano.index',
           'icon'    => 'fas fa-list',
         ],
+        [
+          'text' => 'Perfil',
+          'route'  => 'perfis.index',
+          'icon'    => 'fas fa-shield-alt',
+        ],
 
       ],
     ],
